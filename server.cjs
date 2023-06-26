@@ -2,6 +2,7 @@ const express = require("express");
 const collection = require("./Mongo.cjs");
 const cors = require("cors");
 const app = express();
+const port = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -42,4 +43,4 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-app.listen(8000, () => console.log("Listening on port 8000..."))
+app.listen(port, () => console.log("Listening on port 8000..."))
