@@ -6,11 +6,11 @@ const plantSchema = new mongoose.Schema({
     required: true,
   },
   water: {
-    type: String,
+    type: Number,
     required: true,
   },
   frequency: {
-    type: String,
+    type: Number,
     required: true,
   },
   image: {
