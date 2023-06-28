@@ -93,3 +93,18 @@ app.delete("/deleteplant/:id", async (req, res, next) => {
     console.log(error);
   }
 });
+
+app.put("/updateplant/:id", async (req, res, next) => {
+  try {
+    await Plant.findByIdAndUpdate(req.params.id, {
+      name: req.body.name,
+      water: req.body.water,
+      frequency: req.body.frequency,
+      image: req.body.image
+    });
+    res.send("Plant updated");
+    console.log("Plant updated");
+  } catch (error) {
+    console.log(error);
+  }
+});
