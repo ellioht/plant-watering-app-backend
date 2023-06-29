@@ -124,3 +124,12 @@ app.post("/sendnotification", async (req, res, next) => {
     console.log(error);
   }
 });
+
+app.get("/getnotifications", async (req, res, next) => {
+  try {
+    const notifications = await Notification.find();
+    res.send(notifications);
+  } catch (error) {
+    console.log(error);
+  }
+});
