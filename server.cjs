@@ -108,3 +108,18 @@ app.put("/updateplant/:id", async (req, res, next) => {
     console.log(error);
   }
 });
+
+app.post("/sendnotification", async (req, res, next) => {
+  try {
+    const newNotification = new Notification({
+      plant: req.body.plant,
+      date: req.body.date,
+      message: req.body.message
+    });
+    await newNotification.save();
+    res.send("Notification sent");
+    console.log("Notification sent");
+  } catch (error) {
+    console.log(error);
+  }
+});
