@@ -7,6 +7,7 @@ const createError = require("http-errors");
 
 const user = require("./models/user.cjs");
 const Plant = require("./models/plant.cjs");
+const Notification = require("./models/notification.cjs");
 
 connectToDatabase()
   .then(() => {
