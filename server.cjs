@@ -133,3 +133,13 @@ app.get("/getnotifications", async (req, res, next) => {
     console.log(error);
   }
 });
+
+app.delete("/deletenotification/:id", async (req, res, next) => {
+  try {
+    await Notification.findByIdAndDelete(req.params.id);
+    res.send("Notification deleted");
+    console.log("Notification deleted");
+  } catch (error) {
+    console.log(error);
+  }
+});
